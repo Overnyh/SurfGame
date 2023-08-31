@@ -16,7 +16,6 @@ public class MB_PlayerMovement : MonoBehaviour
     public float jumpHeight = 3f;
 
     [SerializeField] TextMeshProUGUI speedHud = null;
-    [SerializeField] Animator animator = null;
 
     public Transform graundCheck = null;
     public float graundDistance = 0.4f;
@@ -33,7 +32,7 @@ public class MB_PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        Application.targetFrameRate = 120;
+        //Application.targetFrameRate = 120;
     }
 
     void FixedUpdate()
@@ -97,8 +96,6 @@ public class MB_PlayerMovement : MonoBehaviour
 
             velocity.y += gravity * Time.deltaTime;
             controller.Move(velocity * Time.deltaTime);
-
-            animator.SetBool("F", false);
         }
 
     }
@@ -123,11 +120,6 @@ public class MB_PlayerMovement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             print("Jamp");
         }
-    }
-
-    public void F()
-    {
-        animator.SetBool("F", true);
     }
 }
 

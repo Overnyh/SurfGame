@@ -11,6 +11,6 @@ public class MBM : MonoBehaviour
     }
     public void DoF()
     {
-        characterController.GetComponent<MB_PlayerMovement>().F();
+        //characterController.GetComponent<MB_PlayerMovement>().F();
     }
 }

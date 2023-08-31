@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MB_MouseLook : MonoBehaviour
 {
@@ -13,31 +14,22 @@ public class MB_MouseLook : MonoBehaviour
 
     private float mouseX = 0, mouseY = 0;
 
-    private void Start()
-    {
-        //Cursor.lockState = CursorLockMode.Locked;
-    }
-
-    private void FixedUpdate()
-    {
-        //player.transform.rotation = Quaternion.Euler(0, _yRotation, 0);
-        //transform.rotation = Quaternion.Euler(_xRotation, _yRotation, 0);
-    }
+    public bool pressed = false;
 
     private void Update()
     {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved && pressed)
         {
-            mouseX = Input.GetTouch(0).deltaPosition.x;
-            mouseY = Input.GetTouch(0).deltaPosition.y;
+            mouseX = Input.GetTouch(0).deltaPosition.x * sensitivity /10 * Time.fixedDeltaTime;
+            mouseY = Input.GetTouch(0).deltaPosition.y * sensitivity /10 * Time.fixedDeltaTime;
+
+            _yRotation -= mouseX;
+            _xRotation += mouseY;
+
+            _xRotation = Mathf.Clamp(_xRotation, -90, 90);
+
+            player.transform.rotation = Quaternion.Euler(0, _yRotation, 0);
+            transform.rotation = Quaternion.Euler(_xRotation, _yRotation, 0);
         }
-
-        _yRotation += mouseX;
-        _xRotation -= mouseY;
-
-        player.transform.rotation = Quaternion.Euler(0, _yRotation, 0);
-        transform.rotation = Quaternion.Euler(_xRotation, _yRotation, 0);
-
-        //_xRotation = Mathf.Clamp(_xRotation, -90, 90);
     }
 }

@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     public float jumpHeight = 3f;
 
     [SerializeField] TextMeshProUGUI speedHud = null;
-    [SerializeField] Animator animator = null;
 
     public Transform graundCheck = null;
     public float graundDistance = 0.4f;
@@ -32,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        Application.targetFrameRate = 120;
+        //Application.targetFrameRate = 120;
     }
 
     void FixedUpdate()
@@ -80,15 +79,6 @@ public class PlayerMovement : MonoBehaviour
                 print("Jamp");
             }
 
-            if (Input.GetKey(KeyCode.F))
-            {
-                animator.SetBool("F", true);
-            }
-            else
-            {
-                animator.SetBool("F", false);
-            }
-
             if (!isGraunded && !isSurf)
             {
                 if (oldPosition != currentPosition)
@@ -114,7 +104,6 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
-    
     private bool OnSlope() 
     {
         if (!isGraunded && !isSurf) return false;
