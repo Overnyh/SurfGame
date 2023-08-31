@@ -2,7 +2,7 @@ using System;
 using UnityEditor;
 using UnityEngine;
 
-public class CameraMovement : MonoBehaviour
+public class PC_MouseLook : MonoBehaviour
 {
     [SerializeField] private GameObject player = null;
     [SerializeField] public float sensitivity = 500;
