@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public class Settings : MonoBehaviour
 {
@@ -12,8 +14,19 @@ public class Settings : MonoBehaviour
     [SerializeField] GameObject buttonF = null;
     [SerializeField] GameObject JS = null;
 
-    public float Sensitivity = 100;
+    [SerializeField] private GameObject settingsPanel;
+    [SerializeField] private Slider slider;
+    [SerializeField] private Toggle toggle;
+
+    public int Sensitivity = 100;
     public bool AoutoHop = true, Mobile = false;
+
+    private void Awake()
+    {
+        Sensitivity = YandexGame.savesData.Sensitivity;
+        AoutoHop = YandexGame.savesData.AutoHope;
+        Mobile = YandexGame.EnvironmentData.isMobile;
+    }
 
     void Start()
     {
@@ -23,7 +36,7 @@ public class Settings : MonoBehaviour
             buttonHop.SetActive(true);
             buttonF.SetActive(true);
 
-            characterCamera.GetComponent<CameraMovement>().enabled = false;
+            characterCamera.GetComponent<PC_MouseLook>().enabled = false;
             characterCamera.GetComponent<MB_MouseLook>().enabled = true;
             characterCamera.GetComponent<MB_MouseLook>().sensitivity = Sensitivity;
 
@@ -39,19 +52,69 @@ public class Settings : MonoBehaviour
             buttonF.SetActive(false);
 
             characterCamera.GetComponent<MB_MouseLook>().enabled = false;
-            characterCamera.GetComponent<CameraMovement>().enabled = true;
-            characterCamera.GetComponent<CameraMovement>().sensitivity = Sensitivity;
+            characterCamera.GetComponent<PC_MouseLook>().enabled = true;
+            characterCamera.GetComponent<PC_MouseLook>().sensitivity = Sensitivity;
 
 
             characterController.GetComponent<MB_PlayerMovement>().enabled = false;
             characterController.GetComponent<PlayerMovement>().enabled = true;
             characterController.GetComponent<PlayerMovement>().AutoHop = AoutoHop;
         }
-        
-        //characterCamera.GetComponent<CameraMovement>().sensitivity = Sensitivity;
-        //characterCamera.GetComponent<MB_MouseLook>().sensitivity = Sensitivity;
 
-        //characterController.GetComponent<PlayerMovement>().AutoHop = AoutoHop;
-        //characterController.GetComponent<MB_PlayerMovement>().AutoHop = AoutoHop;
+        slider.value = Sensitivity;
+        toggle.isOn = AoutoHop;
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SettingsPanelVisibility(!settingsPanel.activeSelf);
+        }
+    }
+
+    public void SensitivityUpdate(Slider slider)
+    {
+        Sensitivity = (int)slider.value;
+    }
+    
+    public void AutoHopUpdate(Toggle toggle)
+    {
+        AoutoHop = toggle.isOn;
+    }
+
+    public void SaveSettings()
+    {
+        YandexGame.savesData.Sensitivity = Sensitivity;
+        YandexGame.savesData.AutoHope = AoutoHop;
+        if (Mobile)
+        {
+            characterCamera.GetComponent<MB_MouseLook>().sensitivity = Sensitivity;
+            characterController.GetComponent<MB_PlayerMovement>().AutoHop = AoutoHop;
+        }
+        else
+        {
+            characterCamera.GetComponent<PC_MouseLook>().sensitivity = Sensitivity;
+            characterController.GetComponent<PlayerMovement>().AutoHop = AoutoHop;
+        }
+        
+    }
+
+    public void SettingsPanelVisibility(bool visible)
+    {
+        if (!visible)
+        {
+            settingsPanel.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            SaveSettings();
+        }
+        else
+        {
+            settingsPanel.SetActive(true);
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+        }
+        
     }
 }

@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 3971ef4135230984ab2ec2abd6abdcad
+  - enabled: 1
     path: Assets/Scenes/Swiming Pool.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Freestyle.unity
+    guid: 02ffbdea9f4924d45a8642f71694a671
+  - enabled: 1
+    path: Assets/Scenes/RGB.unity
+    guid: 8d29e0c549d02ea41b3bc2afa4d1e413
   m_configObjects: {}
