@@ -7,13 +7,9 @@ public class TriggerSound : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip audioClip;
+
     private void OnTriggerEnter(Collider other)
     {
         audioSource.PlayOneShot(audioClip);
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        print("stay");
     }
 }
