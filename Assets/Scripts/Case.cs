@@ -4,6 +4,7 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 
 public class Case : MonoBehaviour
@@ -54,7 +55,8 @@ public class Case : MonoBehaviour
 
         for (int i = 0; i < itemsInCase; i++)
         {
-            Instantiate(i == itemsInCase - WinItemPosition ? winItem : items[rnd.Next(items.Count)], ribbon.transform);
+            Instantiate(i == itemsInCase - WinItemPosition ? winItem : items[GetWinItem(rnd)], ribbon.transform);
+            // Instantiate(i == itemsInCase - WinItemPosition ? winItem : items[rnd.Next(items.Count)], ribbon.transform);
         }
 
         ribbon.transform
@@ -74,8 +76,12 @@ public class Case : MonoBehaviour
                 audioSource.PlayOneShot(onWin);
                 winPanel.SetActive(true);
                 _winItem = Instantiate(imgObject, winPanel.transform);
+                Destroy(imgObject);
                 _winItem.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                 _winItem.transform.DOScale(new Vector3(2, 2, 2), 0.5f).SetEase(Ease.OutBounce);
+
+                YandexGame.savesData.OpenKnifes[knifeItem.KnifeId] = true;
+                YandexGame.SaveProgress();
             });
     }
 

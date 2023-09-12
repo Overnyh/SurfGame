@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using YG;
 
 public class KnifesManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class KnifesManager : MonoBehaviour
 
     void Start()
     {
+        knifeIndex =  YandexGame.savesData.TackenKnifeId;
         array[knifeIndex].SetActive(true);
         knife = array[knifeIndex].GetComponent<Animator>();
     }

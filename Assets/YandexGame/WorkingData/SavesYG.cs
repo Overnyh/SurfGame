@@ -10,11 +10,14 @@ namespace YG
         public string language = "ru";
         public bool promptDone;
 
+
+        public bool[] OpenKnifes = new bool[20];
+        public int TackenKnifeId = 0;
         public int Sensitivity = 100;
         public bool AutoHope = true;
         public SavesYG()
         {
-            
+            OpenKnifes[0] = true;
         }
     }
 }
