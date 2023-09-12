@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class Case : MonoBehaviour
@@ -9,7 +11,9 @@ public class Case : MonoBehaviour
     [SerializeField] private GameObject ribbon;
     [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject openCasePanel;
-    [SerializeField] private GameObject openButton;
+    [SerializeField] private Image rareImage;
+    [SerializeField] private TextMeshProUGUI nameText;
+    [SerializeField] private List<Sprite> rareImageList;
     [SerializeField] private List<GameObject> items;
     [SerializeField] private int itemsInCase;
     [SerializeField] private int openTime;
@@ -19,7 +23,7 @@ public class Case : MonoBehaviour
     [SerializeField] private AudioClip onOpen;
     [SerializeField] private AudioClip onWin;
 
-    private const int ItemSize = 200;
+    private const int ItemSize = 400;
     private const int WinItemPosition = 4;
 
     private GameObject _winItem;
@@ -35,19 +39,18 @@ public class Case : MonoBehaviour
         {
             Destroy(_winItem);
         }
-        openButton.SetActive(true);
         winPanel.SetActive(false);
         openCasePanel.SetActive(true);
     }
 
     public void CaseOpen()
     {
-        openButton.SetActive(false);
         audioSource.PlayOneShot(onOpen);
         
         System.Random rnd = new System.Random();
+        int winNumber = GetWinItem(rnd);
+        GameObject winItem = items[winNumber];
 
-        GameObject winItem = items[GetWinItem(rnd)];
 
         for (int i = 0; i < itemsInCase; i++)
         {
@@ -59,9 +62,18 @@ public class Case : MonoBehaviour
             .SetEase(ease)
             .OnComplete(() =>
             {
+                KnifeItem knifeItem = items[winNumber].GetComponent<KnifeItem>();
+                GameObject imgObject = new GameObject("winItem");
+                RectTransform trans = imgObject.AddComponent<RectTransform>();
+                trans.sizeDelta= new Vector2(400, 400);
+                Image image = imgObject.AddComponent<Image>();
+                image.sprite = knifeItem.WinImage;
+                nameText.text = knifeItem.KnifeName;
+                
+                rareImage.sprite = rareImageList[knifeItem.Rare ? 1 : 0];
                 audioSource.PlayOneShot(onWin);
                 winPanel.SetActive(true);
-                _winItem = Instantiate(winItem, winPanel.transform);
+                _winItem = Instantiate(imgObject, winPanel.transform);
                 _winItem.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                 _winItem.transform.DOScale(new Vector3(2, 2, 2), 0.5f).SetEase(Ease.OutBounce);
             });
