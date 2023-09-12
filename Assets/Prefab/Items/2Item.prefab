@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1302469969697556368}
   - component: {fileID: 7953088755975148935}
   - component: {fileID: 6741517552487615257}
+  - component: {fileID: 1612997051765681001}
   m_Layer: 5
   m_Name: 2Item
   m_TagString: Untagged
@@ -36,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1302469969697556368
 CanvasRenderer:
@@ -95,5 +96,21 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 200, y: 200, z: 1}
+  m_Size: {x: 400, y: 400, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1612997051765681001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6584358936100109535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a8f58bff83a1845b76c7f94c92160b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KnifeName: M9 Bowie | Lore
+  InventoryImage: {fileID: 21300000, guid: 252b753d829688d4182c0b861f670953, type: 3}
+  WinImage: {fileID: 21300000, guid: 7538e9f10ffc66340aff9ae98d0ed4c8, type: 3}
+  Rare: 1
