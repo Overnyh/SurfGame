@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a8f58bff83a1845b76c7f94c92160b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KnifeName: Knife
+  KnifeName: Knife | ...
   InventoryImage: {fileID: 21300000, guid: 44a293b363e403146a3f41280afc5306, type: 3}
   WinImage: {fileID: 21300000, guid: 5e432f35232247449b4e3257e86b9d18, type: 3}
   Rare: 0

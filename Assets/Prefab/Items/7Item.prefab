@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a8f58bff83a1845b76c7f94c92160b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnifeId: 6
   KnifeName: Karambit | Emerald Claw
   InventoryImage: {fileID: 21300000, guid: 62b77b0cbc1565a4fb15688b7ab17c75, type: 3}
   WinImage: {fileID: 21300000, guid: a575f2dcbe7c09c48bd0a6591cc3edbc, type: 3}

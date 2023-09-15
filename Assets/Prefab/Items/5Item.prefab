@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a8f58bff83a1845b76c7f94c92160b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnifeId: 4
   KnifeName: Butterfly knife | "Kuka-re-ku!"
   InventoryImage: {fileID: 21300000, guid: 6a4eaa5400e00f7489643031dc1e24fd, type: 3}
   WinImage: {fileID: 21300000, guid: b1f8d1c68f99d084495ea17f84ed4077, type: 3}

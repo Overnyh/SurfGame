@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a8f58bff83a1845b76c7f94c92160b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnifeId: 5
   KnifeName: Karambit | Autotronic
   InventoryImage: {fileID: 21300000, guid: 96ab526a00fe8f14087afea80d7c50e6, type: 3}
   WinImage: {fileID: 21300000, guid: 42379a5e6e3378945838d7cfdba7775c, type: 3}
