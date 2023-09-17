@@ -10,8 +10,10 @@ using YG;
 public class Case : MonoBehaviour
 {
     [SerializeField] private GameObject ribbon;
+    [SerializeField] private GameObject ribbonX3;
     [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject openCasePanel;
+    [SerializeField] private GameObject onOpenPanel;
     [SerializeField] private Image rareImage;
     [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private List<Sprite> rareImageList;
@@ -25,14 +27,21 @@ public class Case : MonoBehaviour
     [SerializeField] private AudioClip onWin;
 
     private const int ItemSize = 400;
+    private const int ItemSizeX3 = 250;
     private const int WinItemPosition = 4;
 
     private GameObject _winItem;
+    private List<KnifeItem> _winItems = new List<KnifeItem>();
 
     public void OpenCasePanel()
     {
         ribbon.transform.localPosition = new Vector3(0, ribbon.transform.position.y, 0);
+        ribbonX3.transform.localPosition = new Vector3(0, ribbon.transform.position.y, 0);
         foreach (Transform child in ribbon.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach (Transform child in ribbonX3.transform)
         {
             Destroy(child.gameObject);
         }
@@ -64,30 +73,74 @@ public class Case : MonoBehaviour
             .SetEase(ease)
             .OnComplete(() =>
             {
-                KnifeItem knifeItem = items[winNumber].GetComponent<KnifeItem>();
-                GameObject imgObject = new GameObject("winItem");
-                RectTransform trans = imgObject.AddComponent<RectTransform>();
-                trans.sizeDelta= new Vector2(400, 400);
-                Image image = imgObject.AddComponent<Image>();
-                image.sprite = knifeItem.WinImage;
-                nameText.text = knifeItem.KnifeName;
-                
-                rareImage.sprite = rareImageList[knifeItem.Rare ? 1 : 0];
-                audioSource.PlayOneShot(onWin);
-                winPanel.SetActive(true);
-                _winItem = Instantiate(imgObject, winPanel.transform);
-                Destroy(imgObject);
-                _winItem.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-                _winItem.transform.DOScale(new Vector3(2, 2, 2), 0.5f).SetEase(Ease.OutBounce);
+                ShowWinItem(items[winNumber].GetComponent<KnifeItem>());
+            });
+    }
+    public void CaseOpenX3()
+    {
+        audioSource.PlayOneShot(onOpen);
+        
+        System.Random rnd = new System.Random();
+        var winNumber = new[] { GetWinItem(rnd), GetWinItem(rnd), GetWinItem(rnd) };
+        var winItem = new[] {items[winNumber[0]], items[ winNumber[1]], items[ winNumber[2]]};
+        
+        for (int i = 0; i < itemsInCase*3; i++)
+        {
+            var obj = Instantiate(i/3 == itemsInCase - WinItemPosition ? winItem[i%3] : items[GetWinItem(rnd)], ribbonX3.transform);
+            obj.GetComponent<BoxCollider>().size = new Vector3(ItemSizeX3, ItemSizeX3, 1);
+        }
 
-                YandexGame.savesData.OpenKnifes[knifeItem.KnifeId] = true;
-                YandexGame.SaveProgress();
+        ribbonX3.transform
+            .DOLocalMoveX(-ItemSizeX3 * (itemsInCase - WinItemPosition) + ItemBias(rnd, true), openTime)
+            .SetEase(ease)
+            .OnComplete(() =>
+            {
+                ShowWinItem(items[winNumber[0]].GetComponent<KnifeItem>());
+                _winItems.Add(items[winNumber[1]].GetComponent<KnifeItem>());
+                _winItems.Add(items[winNumber[2]].GetComponent<KnifeItem>());
             });
     }
 
-    private int ItemBias(System.Random rnd)
+    private void ShowWinItem(KnifeItem knifeItem)
     {
-        return rnd.Next(-(ItemSize / 2 - 1), ItemSize / 2 - 1);
+        GameObject imgObject = new GameObject("winItem");
+        RectTransform trans = imgObject.AddComponent<RectTransform>();
+        trans.sizeDelta= new Vector2(400, 400);
+        Image image = imgObject.AddComponent<Image>();
+        image.sprite = knifeItem.WinImage;
+        nameText.text = knifeItem.KnifeName;
+                
+        rareImage.sprite = rareImageList[knifeItem.Rare ? 1 : 0];
+        audioSource.PlayOneShot(onWin);
+        winPanel.SetActive(true);
+        _winItem = Instantiate(imgObject, winPanel.transform);
+        Destroy(imgObject);
+        _winItem.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        _winItem.transform.DOScale(new Vector3(2, 2, 2), 0.5f).SetEase(Ease.OutBounce);
+                
+        YandexGame.savesData.OpenKnifes[knifeItem.KnifeId] = true;
+        YandexGame.SaveProgress();
+    }
+
+    public void TryClose()
+    {
+        if (_winItems.Count > 0)
+        {
+            var item = _winItems[0];
+            Destroy(_winItem);
+            ShowWinItem(item);
+            _winItems.Remove(item);
+        }
+        else
+        {
+            onOpenPanel.SetActive(false);
+            openCasePanel.SetActive(false);
+        }
+    }
+
+    private int ItemBias(System.Random rnd, bool isSmall = false)
+    {
+        return isSmall ? rnd.Next(-(ItemSizeX3 / 2 - 1), ItemSizeX3 / 2 - 1) : rnd.Next(-(ItemSize / 2 - 1), ItemSize / 2 - 1);
     }
 
     private int GetWinItem(System.Random rnd, bool iswin = false)
