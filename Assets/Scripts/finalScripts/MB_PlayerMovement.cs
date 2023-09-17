@@ -32,7 +32,7 @@ public class MB_PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        //Application.targetFrameRate = 15;
+        //Application.targetFrameRate = 120;
     }
 
     void FixedUpdate()
