@@ -108,12 +108,18 @@ public class Settings : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             SaveSettings();
+
+            characterCamera.GetComponent<MB_MouseLook>().enabled = true;
+            characterCamera.GetComponent<PC_MouseLook>().enabled = true;
         }
         else
         {
             settingsPanel.SetActive(true);
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
+
+            characterCamera.GetComponent<MB_MouseLook>().enabled = false;
+            characterCamera.GetComponent<PC_MouseLook>().enabled = false;
         }
         
     }
