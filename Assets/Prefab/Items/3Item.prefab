@@ -111,7 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KnifeId: 2
-  KnifeName: M9 Bowie | Autotronic
+  KnifeNameEn: M9 Bowie | Autotronic
+  KnifeNameRu: "\u041C9 \u0411\u043E\u0443\u0438 | \u0410\u0432\u0442\u043E\u0442\u0440\u043E\u043D\u0438\u043A"
   InventoryImage: {fileID: 21300000, guid: 4b150c9c6be3559448ec2a9ef311233d, type: 3}
   WinImage: {fileID: 21300000, guid: 12ee9c54b5c345046a845dc18852484f, type: 3}
   Rare: 1

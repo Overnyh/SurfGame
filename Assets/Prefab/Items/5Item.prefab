@@ -111,7 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KnifeId: 4
-  KnifeName: Butterfly knife | "Kuka-re-ku!"
+  KnifeNameEn: Butterfly knife | "Kuka-re-ku!"
+  KnifeNameRu: "\u041D\u043E\u0436-\u0431\u0430\u0431\u043E\u0447\u043A\u0430 | \"\u041A\u0443\u043A\u0430-\u0440\u0443-\u043A\u0443!\""
   InventoryImage: {fileID: 21300000, guid: 6a4eaa5400e00f7489643031dc1e24fd, type: 3}
   WinImage: {fileID: 21300000, guid: b1f8d1c68f99d084495ea17f84ed4077, type: 3}
   Rare: 1

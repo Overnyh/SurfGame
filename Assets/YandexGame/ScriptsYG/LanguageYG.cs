@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 #if UNITY_EDITOR
 using System.Collections;
@@ -14,7 +15,7 @@ namespace YG
     public class LanguageYG : MonoBehaviour
     {
         public Text textUIComponent;
-        public TextMesh textMeshComponent;
+        public TextMeshProUGUI textMeshComponent;
         public InfoYG infoYG;
         [Space(10)]
         public string text;
@@ -26,21 +27,21 @@ namespace YG
 
         private void Awake()
         {
-            // Раскомментируйте нижнюю строку, если вы получаете какие-либо ошибки связанные с InfoYG. В каких то случаях, это может помочь.
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ InfoYG. пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ.
             // Uncomment the bottom line if you get any errors related to infoYG. In some cases, it may help.
             //Serialize();
 
-            if (textUIComponent)
-                baseFontSize = textUIComponent.fontSize;
-            else if (textMeshComponent)
-                baseFontSize = textMeshComponent.fontSize;
+            // if (textUIComponent)
+            //     baseFontSize = textUIComponent.fontSize;
+            // else if (textMeshComponent)
+            //     baseFontSize = textMeshComponent.fontSize;
         }
 
         [ContextMenu("Reserialize")]
         public void Serialize()
         {
             textUIComponent = GetComponent<Text>();
-            textMeshComponent = GetComponent<TextMesh>();
+            textMeshComponent = GetComponent<TextMeshProUGUI>();
 
             infoYG = GetInfoYG();
         }
@@ -96,53 +97,53 @@ namespace YG
 
         public void ChangeFont(Font[] fontArray)
         {
-            Font font;
-
-            if (fontArray.Length >= fontNumber + 1 && fontArray[fontNumber])
-            {
-                font = fontArray[fontNumber];
-            }
-            else font = null;
-
-            if (uniqueFont)
-            {
-                font = uniqueFont;
-            }
-            else if (font == null)
-            {
-                if (infoYG.fonts.defaultFont.Length >= fontNumber + 1 && infoYG.fonts.defaultFont[fontNumber])
-                {
-                    font = infoYG.fonts.defaultFont[fontNumber];
-                }
-                else if (infoYG.fonts.defaultFont.Length >= 1 && infoYG.fonts.defaultFont[0])
-                {
-                    font = infoYG.fonts.defaultFont[0];
-                }
-            }
-
-            if (font != null)
-            {
-                if (textUIComponent)
-                    textUIComponent.font = font;
-                else if (textMeshComponent)
-                    textMeshComponent.font = font;
-            }
+            // Font font;
+            //
+            // if (fontArray.Length >= fontNumber + 1 && fontArray[fontNumber])
+            // {
+            //     font = fontArray[fontNumber];
+            // }
+            // else font = null;
+            //
+            // if (uniqueFont)
+            // {
+            //     font = uniqueFont;
+            // }
+            // else if (font == null)
+            // {
+            //     if (infoYG.fonts.defaultFont.Length >= fontNumber + 1 && infoYG.fonts.defaultFont[fontNumber])
+            //     {
+            //         font = infoYG.fonts.defaultFont[fontNumber];
+            //     }
+            //     else if (infoYG.fonts.defaultFont.Length >= 1 && infoYG.fonts.defaultFont[0])
+            //     {
+            //         font = infoYG.fonts.defaultFont[0];
+            //     }
+            // }
+            //
+            // if (font != null)
+            // {
+            //     // if (textUIComponent)
+            //     //     textUIComponent.font = font;
+            //     // else if (textMeshComponent)
+            //     //     textMeshComponent.font = font;
+            // }
         }
 
         void FontSizeCorrect(int[] fontSizeArray)
         {
-            if (textUIComponent)
-                textUIComponent.fontSize = baseFontSize;
-            else if (textMeshComponent)
-                textMeshComponent.fontSize = baseFontSize;
-
-            if (fontSizeArray.Length != 0 && fontSizeArray.Length >= fontNumber - 1)
-            {
-                if (textUIComponent)
-                    textUIComponent.fontSize += fontSizeArray[fontNumber];
-                else if (textMeshComponent)
-                    textMeshComponent.fontSize += fontSizeArray[fontNumber];
-            }
+            // if (textUIComponent)
+            //     textUIComponent.fontSize = baseFontSize;
+            // else if (textMeshComponent)
+            //     textMeshComponent.fontSize = baseFontSize;
+            //
+            // if (fontSizeArray.Length != 0 && fontSizeArray.Length >= fontNumber - 1)
+            // {
+            //     if (textUIComponent)
+            //         textUIComponent.fontSize += fontSizeArray[fontNumber];
+            //     else if (textMeshComponent)
+            //         textMeshComponent.fontSize += fontSizeArray[fontNumber];
+            // }
         }
 
         public string[] languages
@@ -243,7 +244,7 @@ namespace YG
                 text = textMeshComponent.text;
             else
             {
-                Debug.LogError("(ruСообщение)Текст для перевода не найден!\n(enMessage)The text for translation was not found!");
+                Debug.LogError("(ruпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ!\n(enMessage)The text for translation was not found!");
                 return null;
             }
 
@@ -268,7 +269,7 @@ namespace YG
                 StopAllCoroutines();
                 processTranslateLabel = processTranslateLabel + " error";
 
-                Debug.LogError("(ruСообщение) Процесс не завершён! Вероятно, Вы делали слишком много запросов. В таком случае, API Google Translate блокирует доступ к переводу на некоторое время.  Пожалуйста, попробуйте позже. Не переводите текст слишком часто, чтобы Google не посчитал Ваши действия за спам" +
+                Debug.LogError("(ruпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ) пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ! пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, API Google Translate пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.  пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ. пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ Google пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ" +
                             "\n" + "(enMessage) The process is not completed! Most likely, you made too many requests. In this case, the Google Translate API blocks access to the translation for a while.  Please try again later. Do not translate the text too often, so that Google does not consider your actions as spam");
             }
 

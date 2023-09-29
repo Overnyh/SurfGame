@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using YG;
 
@@ -17,9 +18,11 @@ public class InApp : MonoBehaviour
     
     void SuccessPurchased(string id)
     {
+        print("Good: "+id);
+        YandexGame.savesData.OpenKnifes[Convert.ToInt32(id)] = true;
         YandexGame.SaveProgress();
     }
-    
+
     void FailedPurchased(string id)
     {
         print("Error: "+id);

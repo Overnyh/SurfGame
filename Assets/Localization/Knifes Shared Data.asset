@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Knifes Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Knifes
+  m_TableCollectionNameGuidString: 1d958eedba830804fa9ea7810f59a7db
+  m_Entries:
+  - m_Id: 2182599667712
+    m_Key: 0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6646502776832
+    m_Key: 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6651024236544
+    m_Key: 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6654526480384
+    m_Key: 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6657567350784
+    m_Key: 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6671093981184
+    m_Key: 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6703838912512
+    m_Key: 6
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 1592564100127784984
+  references:
+    version: 2
+    RefIds:
+    - rid: 1592564100127784984
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1696004037686

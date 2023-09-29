@@ -111,7 +111,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KnifeId: 3
-  KnifeName: Butterfly knife | Unremarkable
+  KnifeNameEn: Butterfly knife | Unremarkable
+  KnifeNameRu: "\u041D\u043E\u0436-\u0431\u0430\u0431\u043E\u0447\u043A\u0430 | \u041D\u0435
+    \u043F\u0440\u0438\u043C\u0435\u0447\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0439"
   InventoryImage: {fileID: 21300000, guid: 115169cee9aedef45842e6b6f11f7f09, type: 3}
   WinImage: {fileID: 21300000, guid: 484b04f24ee8af140a1140245ac61639, type: 3}
   Rare: 1
