@@ -25,6 +25,9 @@ public class Case : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip onOpen;
     [SerializeField] private AudioClip onWin;
+    [SerializeField] private GameObject GoldText;
+    [SerializeField] private GameObject BaseText;
+    
 
     private const int ItemSize = 400;
     private const int ItemSizeX3 = 250;
@@ -109,7 +112,10 @@ public class Case : MonoBehaviour
         Image image = imgObject.AddComponent<Image>();
         image.sprite = knifeItem.WinImage;
         nameText.text = knifeItem.KnifeName;
-                
+
+  
+        GoldText.SetActive(knifeItem.Rare);
+        BaseText.SetActive(!knifeItem.Rare);
         rareImage.sprite = rareImageList[knifeItem.Rare ? 1 : 0];
         audioSource.PlayOneShot(onWin);
         winPanel.SetActive(true);

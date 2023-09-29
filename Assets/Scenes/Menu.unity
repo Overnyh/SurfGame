@@ -3678,6 +3678,8 @@ MonoBehaviour:
   audioSource: {fileID: 540929720}
   onOpen: {fileID: 8300000, guid: 9b1339c695d72134393bed4e09df4a54, type: 3}
   onWin: {fileID: 8300000, guid: 6d201f3b2c759de4896c7bbb589bd0c5, type: 3}
+  GoldText: {fileID: 1233449112}
+  BaseText: {fileID: 580888926}
 --- !u!114 &540929717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7047,7 +7049,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1009130362
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11857,7 +11859,7 @@ MonoBehaviour:
   textMeshComponent: {fileID: 1510063725}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
-  ru: "\u041D\u0435 \u043F\u0440\u0438\u043C\u0435\u0447\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0439"
+  ru: "\u041D\u0435\u043F\u0440\u0438\u043C\u0435\u0447\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0439"
   en: Unremarkable
   tr: 
   az: 
