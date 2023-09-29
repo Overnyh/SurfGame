@@ -17,8 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: c7c6e95504bd25e45bf8542042a63940
   m_SerializeEntries:
-  - m_GUID: a847e7250197aec479134d9a9cef7162
-    m_Address: 1Item
+  - m_GUID: 8a41ed60247711f4f8b6a507760008ca
+    m_Address: PLAKAT
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en

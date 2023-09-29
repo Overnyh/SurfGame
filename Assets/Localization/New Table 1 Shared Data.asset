@@ -15,13 +15,18 @@ MonoBehaviour:
   m_TableCollectionName: New Table 1
   m_TableCollectionNameGuidString: 3c7ba7369b1eefd43ab6c21029534433
   m_Entries:
-  - m_Id: 100710739968
+  - m_Id: 16750744690688
+    m_Key: NewsImg
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17173102714880
     m_Key: New Entry
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items:
-    - rid: 1592564100127784990
+    - rid: 1592564100127784996
+    - rid: 1592564100127784997
   m_KeyGenerator:
     rid: 1592564100127784989
   references:
@@ -32,13 +37,23 @@ MonoBehaviour:
         asm: Unity.Localization}
       data:
         m_CustomEpoch: 1696005022948
-    - rid: 1592564100127784990
+    - rid: 1592564100127784996
       type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_Entries:
-        - m_KeyId: 100710739968
+        - m_KeyId: 16750744690688
           m_TableCodes:
           - en
           - ru
-        m_TypeString: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+        m_TypeString: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - rid: 1592564100127784997
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 17173102714880
+          m_TableCodes:
+          - en
+          - ru
+        m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null

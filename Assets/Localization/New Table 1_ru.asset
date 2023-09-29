@@ -18,8 +18,12 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 100710739968
-    m_Localized: 570f4853ddd47884e8d7a15cd623d2c7
+  - m_Id: 17173102714880
+    m_Localized: 2c1f40a90517d4f4ba86dceab5720d18[PLAKAT(RU)]
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16750744690688
+    m_Localized: 2c1f40a90517d4f4ba86dceab5720d18
     m_Metadata:
       m_Items: []
   references:
