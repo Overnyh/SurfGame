@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using YG;
@@ -13,19 +14,25 @@ public class Settings : MonoBehaviour
     [SerializeField] GameObject buttonHop = null;
     [SerializeField] GameObject buttonF = null;
     [SerializeField] GameObject JS = null;
+    [SerializeField] GameObject settings = null;
+    [SerializeField] GameObject help = null;
 
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private Slider slider;
     [SerializeField] private Toggle toggle;
 
+
     public int Sensitivity = 100;
     public bool AoutoHop = true, Mobile = false;
+    bool show = true;
 
     private void Awake()
     {
+        #if !UNITY_EDITOR
         Sensitivity = YandexGame.savesData.Sensitivity;
         AoutoHop = YandexGame.savesData.AutoHope;
         Mobile = YandexGame.EnvironmentData.isMobile;
+        #endif
     }
 
     void Start()
@@ -33,8 +40,10 @@ public class Settings : MonoBehaviour
         if (Mobile) 
         {
             JS.SetActive(true);
+            settings.SetActive(true);
             buttonHop.SetActive(true);
             buttonF.SetActive(true);
+
 
             characterCamera.GetComponent<PC_MouseLook>().enabled = false;
             characterCamera.GetComponent<MB_MouseLook>().enabled = true;
@@ -48,8 +57,11 @@ public class Settings : MonoBehaviour
         else
         {
             JS.SetActive(false);
+            settings.SetActive(false);
             buttonHop.SetActive(false);
             buttonF.SetActive(false);
+
+            help.SetActive(true);
 
             characterCamera.GetComponent<MB_MouseLook>().enabled = false;
             characterCamera.GetComponent<PC_MouseLook>().enabled = true;
@@ -70,6 +82,11 @@ public class Settings : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             SettingsPanelVisibility(!settingsPanel.activeSelf);
+        }
+        if (Input.GetKeyDown(KeyCode.Tab) && !Mobile)
+        {
+            show = !show;
+            help.SetActive(show);
         }
     }
 
