@@ -1601,7 +1601,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &645332032
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2978,12 +2978,13 @@ MonoBehaviour:
   JS: {fileID: 1531760586}
   settings: {fileID: 1119318883}
   help: {fileID: 1116673343}
+  TouchPanel: {fileID: 1930509789}
   settingsPanel: {fileID: 918578037}
   slider: {fileID: 1593068514}
   toggle: {fileID: 1251449485}
   Sensitivity: 100
   AoutoHop: 1
-  Mobile: 0
+  Mobile: 1
 --- !u!4 &1035136727
 Transform:
   m_ObjectHideFlags: 0
@@ -3345,7 +3346,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1035136726}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: SettingsPanelVisibility
         m_Mode: 6
@@ -6193,7 +6194,6 @@ GameObject:
   - component: {fileID: 1901082589}
   - component: {fileID: 1901082588}
   - component: {fileID: 1901082587}
-  - component: {fileID: 1901082586}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: MainCamera
@@ -6217,21 +6217,6 @@ Transform:
   - {fileID: 876534201}
   m_Father: {fileID: 1522706236}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1901082586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1901082584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03b4f75f590e8b84a8ac118caba8acc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1522706232}
-  sensitivity: 100
-  pressed: 0
 --- !u!114 &1901082587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6481,6 +6466,97 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1901890899}
+  m_CullTransparentMesh: 1
+--- !u!1 &1930509789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1930509790}
+  - component: {fileID: 1930509793}
+  - component: {fileID: 1930509792}
+  - component: {fileID: 1930509791}
+  m_Layer: 5
+  m_Name: TouchPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1930509790
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930509789}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2041016740}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 191.66992, y: 0}
+  m_SizeDelta: {x: -383.32996, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1930509791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930509789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf6135ad40f7ca4cbef79b32aeed516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraToRotate: {fileID: 1901082585}
+  player: {fileID: 1522706232}
+  sensitivity: 100
+--- !u!114 &1930509792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930509789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1930509793
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930509789}
   m_CullTransparentMesh: 1
 --- !u!1 &1980328616
 GameObject:
@@ -6737,6 +6813,7 @@ RectTransform:
   - {fileID: 1116673344}
   - {fileID: 955813682}
   - {fileID: 645332032}
+  - {fileID: 1930509790}
   - {fileID: 1119318884}
   - {fileID: 1662572824}
   - {fileID: 886923132}

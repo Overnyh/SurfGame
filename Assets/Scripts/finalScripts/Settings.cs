@@ -16,6 +16,7 @@ public class Settings : MonoBehaviour
     [SerializeField] GameObject JS = null;
     [SerializeField] GameObject settings = null;
     [SerializeField] GameObject help = null;
+    [SerializeField] GameObject TouchPanel = null;
 
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private Slider slider;
@@ -43,11 +44,13 @@ public class Settings : MonoBehaviour
             settings.SetActive(true);
             buttonHop.SetActive(true);
             buttonF.SetActive(true);
+            TouchPanel.SetActive(true);
 
 
             characterCamera.GetComponent<PC_MouseLook>().enabled = false;
-            characterCamera.GetComponent<MB_MouseLook>().enabled = true;
-            characterCamera.GetComponent<MB_MouseLook>().sensitivity = Sensitivity;
+            TouchPanel.GetComponent<TouchCameraMove>().sensitivity = Sensitivity;
+            //characterCamera.GetComponent<MB_MouseLook>().enabled = true;
+            //characterCamera.GetComponent<MB_MouseLook>().sensitivity = Sensitivity;
 
 
             characterController.GetComponent<PlayerMovement>().enabled = false;
@@ -62,8 +65,9 @@ public class Settings : MonoBehaviour
             buttonF.SetActive(false);
 
             help.SetActive(true);
+            TouchPanel.SetActive(false);
 
-            characterCamera.GetComponent<MB_MouseLook>().enabled = false;
+            //characterCamera.GetComponent<MB_MouseLook>().enabled = false;
             characterCamera.GetComponent<PC_MouseLook>().enabled = true;
             characterCamera.GetComponent<PC_MouseLook>().sensitivity = Sensitivity;
 
@@ -106,7 +110,8 @@ public class Settings : MonoBehaviour
         YandexGame.savesData.AutoHope = AoutoHop;
         if (Mobile)
         {
-            characterCamera.GetComponent<MB_MouseLook>().sensitivity = Sensitivity;
+            //characterCamera.GetComponent<MB_MouseLook>().sensitivity = Sensitivity;
+            TouchPanel.GetComponent<TouchCameraMove>().sensitivity = Sensitivity;
             characterController.GetComponent<MB_PlayerMovement>().AutoHop = AoutoHop;
         }
         else
@@ -114,30 +119,40 @@ public class Settings : MonoBehaviour
             characterCamera.GetComponent<PC_MouseLook>().sensitivity = Sensitivity;
             characterController.GetComponent<PlayerMovement>().AutoHop = AoutoHop;
         }
-        
+  
     }
 
     public void SettingsPanelVisibility(bool visible)
     {
-        if (!visible)
+        if (Mobile)
         {
-            settingsPanel.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            SaveSettings();
-
-            characterCamera.GetComponent<MB_MouseLook>().enabled = true;
-            characterCamera.GetComponent<PC_MouseLook>().enabled = true;
+            if (!visible)
+            {
+                settingsPanel.SetActive(false);
+                SaveSettings();
+            }
+            else
+            {
+                settingsPanel.SetActive(true);
+            }
         }
         else
         {
-            settingsPanel.SetActive(true);
-            Cursor.lockState = CursorLockMode.Confined;
-            Cursor.visible = true;
-
-            characterCamera.GetComponent<MB_MouseLook>().enabled = false;
-            characterCamera.GetComponent<PC_MouseLook>().enabled = false;
+            if (!visible)
+            {
+                settingsPanel.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                SaveSettings();
+                characterCamera.GetComponent<PC_MouseLook>().enabled = true;
+            }
+            else
+            {
+                settingsPanel.SetActive(true);
+                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.visible = true;
+                characterCamera.GetComponent<PC_MouseLook>().enabled = false;
+            }
         }
-        
     }
 }

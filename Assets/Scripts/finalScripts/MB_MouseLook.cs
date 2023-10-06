@@ -16,20 +16,35 @@ public class MB_MouseLook : MonoBehaviour
 
     public bool pressed = false;
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved && pressed)
+        /*
+        if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Moved && Input.GetTouch(0).position.x > 680f)
         {
             mouseX = Input.GetTouch(0).deltaPosition.x * sensitivity /10 * Time.fixedDeltaTime;
             mouseY = Input.GetTouch(0).deltaPosition.y * sensitivity /10 * Time.fixedDeltaTime;
 
-            _yRotation -= mouseX;
-            _xRotation += mouseY;
+            _yRotation += mouseX;
+            _xRotation -= mouseY;
 
             _xRotation = Mathf.Clamp(_xRotation, -90, 90);
 
             player.transform.rotation = Quaternion.Euler(0, _yRotation, 0);
             transform.rotation = Quaternion.Euler(_xRotation, _yRotation, 0);
         }
+        else if (Input.touchCount == 2 && Input.GetTouch(1).phase == TouchPhase.Moved && Input.GetTouch(1).position.x > 680f)
+        {
+            mouseX = Input.GetTouch(1).deltaPosition.x * sensitivity / 10 * Time.fixedDeltaTime;
+            mouseY = Input.GetTouch(1).deltaPosition.y * sensitivity / 10 * Time.fixedDeltaTime;
+
+            _yRotation += mouseX;
+            _xRotation -= mouseY;
+
+            _xRotation = Mathf.Clamp(_xRotation, -90, 90);
+
+            player.transform.rotation = Quaternion.Euler(0, _yRotation, 0);
+            transform.rotation = Quaternion.Euler(_xRotation, _yRotation, 0);
+        }
+        */
     }
 }

@@ -2916,7 +2916,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722155673}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6932a1d5dabc0124e9344a588e56d6a5, type: 3}
   m_Name: 
@@ -2988,7 +2988,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722155673}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7639dafd69f3e94eac466162a1e4f87, type: 3}
   m_Name: 
@@ -3335,9 +3335,9 @@ GameObject:
   - component: {fileID: 909113278}
   - component: {fileID: 909113281}
   - component: {fileID: 909113280}
-  - component: {fileID: 909113279}
+  - component: {fileID: 909113283}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: TouchPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3359,22 +3359,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 162.1587, y: 0}
-  m_SizeDelta: {x: -324.3174, y: -0.0002}
+  m_AnchoredPosition: {x: 191.67, y: 0}
+  m_SizeDelta: {x: -383.33, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &909113279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 909113277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b524168a82f13d40acafba2be43771c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mb_mouselook: {fileID: 1928986527}
 --- !u!114 &909113280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3413,6 +3400,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909113277}
   m_CullTransparentMesh: 1
+--- !u!114 &909113283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909113277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf6135ad40f7ca4cbef79b32aeed516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraToRotate: {fileID: 1928986533}
+  player: {fileID: 722155673}
+  sensitivity: 100
 --- !u!1 &934478835
 GameObject:
   m_ObjectHideFlags: 0
@@ -6668,12 +6670,13 @@ MonoBehaviour:
   JS: {fileID: 1320240251}
   settings: {fileID: 450932879}
   help: {fileID: 1483560773}
+  TouchPanel: {fileID: 909113277}
   settingsPanel: {fileID: 1969390712}
   slider: {fileID: 1504367875}
   toggle: {fileID: 1258772334}
   Sensitivity: 100
   AoutoHop: 1
-  Mobile: 0
+  Mobile: 1
 --- !u!4 &1514210287
 Transform:
   m_ObjectHideFlags: 0
@@ -7505,7 +7508,6 @@ GameObject:
   - component: {fileID: 1928986531}
   - component: {fileID: 1928986530}
   - component: {fileID: 1928986529}
-  - component: {fileID: 1928986528}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: MainCamera
@@ -7513,21 +7515,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1928986528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928986527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03b4f75f590e8b84a8ac118caba8acc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 722155673}
-  sensitivity: 100
-  pressed: 0
 --- !u!114 &1928986529
 MonoBehaviour:
   m_ObjectHideFlags: 0
