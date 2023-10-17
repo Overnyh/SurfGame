@@ -1,13 +1,13 @@
-"CSGO 2: Сёрф с ножами!" - невероятно захватывающая игра, выполненная в стилистике CSGO 2! Здесь ты можешь скользить по различным поверхностям, набирать скорость, исполнять трюки и конечно же любоваться самыми редкими ножами из Counter-Strike 2!
+"CS2 Сёрф с ножами!" - невероятно захватывающая игра, выполненная в стилистике CS2! Здесь ты можешь скользить по различным поверхностям, набирать скорость, исполнять трюки и конечно же любоваться самыми редкими ножами из Counter-Strike 2!
 
 
-"CSGO 2: Сёрф с ножами!" - захватывающая игра, выполненная по мотивам популярного режима "Cёрф" из Counter-Strike.
+"CS2 Сёрф с ножами!" - захватывающая игра, выполненная по мотивам популярного режима "Cёрф" из Counter-Strike.
 
-Если ты всегда мечтал опробовать на себе мастерство сёрфа и тебе нравятся ножи из CSGO, то эта игра именно для тебя!
+Если ты всегда мечтал опробовать на себе мастерство сёрфа и тебе нравятся ножи из CS2, то эта игра именно для тебя!
 
-Здесь на твой выбор есть несколько проработанных карт, самые редкие ножи из CSGO 2, а также бесплатный ножевой кейс и бесконечный простор для раскрытия твоего сёрферского потенциала!
+Здесь на твой выбор есть несколько проработанных карт, самые редкие ножи из CS2, а также бесплатный ножевой кейс и бесконечный простор для раскрытия твоего сёрферского потенциала!
 
-Совершенствуйся! Открывай новые ножи! Прокачивай навык сёрфинга и проводи время за любимым делом, чтобы стать лидером в рейтинговой таблице!
+Совершенствуйся! Открывай новые ножи! Прокачивай навык сёрфинга, проводи время за любимым делом и становись лидером в рейтинговой таблице!
 
 
 Управление на компьютере:
@@ -27,6 +27,41 @@
 - Для осмотра ножа используйте кнопку, расположенную над кнопкой прыжка.
 - Для открытия меню/настроек используйте кнопку с изображение шестерёнки.
 
+
+
+
+
+
+
+
+"CS2 Surf with knives!" - an incredibly addictive game made in the style of CS2! Here you can slide on various surfaces, gain speed, perform tricks and of course admire the rarest knives from Counter-Strike 2!
+
+
+"CS2 Surf with knives!" - an exciting game based on the popular Surf mode from Counter-Strike.
+
+If you've always dreamed of trying out surf skills and you like knives from CS2, then this game is just for you!
+
+Here you can choose from several well-developed maps, the rarest knives from CS2, as well as a free knife case and endless scope for discovering your surfing potential!
+
+Improve yourself! Unlock new knives! Upgrade your surfing skills, spend time doing what you love and become a leader in the rating table!
+
+
+Computer management:
+- Use the left mouse click to select.
+- The camera is controlled with the mouse.
+- The character is moved using the WASD keys on the keyboard.
+- To jump, use the space key on the keyboard.
+- To inspect the knife, use the F key on the keyboard.
+- To open the menu/settings, use the P key on the keyboard.
+- To enable/hide the control prompt, use the Tab key on the keyboard.
+
+Control on the phone:
+- Use a single touch to select.
+- The camera is controlled by pinching and holding your finger on the screen.
+- The character is moved using the joystick.
+- To jump, use the large button on the right side of the screen.
+- To inspect the knife, use the button located above the jump button.
+- To open the menu/settings, use the button with the gear image.
 
 
 
