@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
-using UnityEditor.Localization.Platform.Android;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,9 +8,9 @@ public class TouchCameraMove : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 {
     private bool isDragging = false;
     private Vector2 dragStartPosition;
-    [SerializeField] private Transform cameraToRotate = null; // Ссылка на объект камеры, который вы хотите вращать
+    [SerializeField] private Transform cameraToRotate = null;
     [SerializeField] private GameObject player = null;
-    public float sensitivity = 100f; // Скорость вращения камеры
+    public float sensitivity = 100f;
 
     private float _xRotation;
     private float _yRotation;
@@ -20,29 +19,29 @@ public class TouchCameraMove : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        // Палец коснулся панели
+        // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         isDragging = true;
         dragStartPosition = eventData.position;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        // Палец отпущен
+        // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         isDragging = false;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        // Палец двигается внутри панели
+        // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         if (isDragging && cameraToRotate != null)
         {
             Vector2 currentPosition = eventData.position;
             Vector2 delta = currentPosition - dragStartPosition;
 
-            // Вычисляем угол вращения на основе движения пальца
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
             float rotationAngle = delta.x * sensitivity;
 
-            // Применяем вращение к камере
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
             //cameraToRotate.Rotate(Vector3.up, rotationAngle);
             mouseX = delta.x * sensitivity * Time.fixedDeltaTime / 10;
             mouseY = delta.y * sensitivity * Time.fixedDeltaTime / 10;
@@ -54,7 +53,7 @@ public class TouchCameraMove : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             player.transform.rotation = Quaternion.Euler(0, _yRotation, 0);
             cameraToRotate.transform.rotation = Quaternion.Euler(_xRotation, _yRotation, 0);
 
-            // Обновляем позицию начала перемещения
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             dragStartPosition = currentPosition;
         }
     }

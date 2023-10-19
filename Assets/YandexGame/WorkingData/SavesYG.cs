@@ -15,6 +15,7 @@ namespace YG
         public int TackenKnifeId = 0;
         public int Sensitivity = 100;
         public bool AutoHope = true;
+        public int movement = 0;
         public SavesYG()
         {
             OpenKnifes[0] = true;

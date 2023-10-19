@@ -5930,6 +5930,7 @@ GameObject:
   - component: {fileID: 1598926461}
   - component: {fileID: 1598926463}
   - component: {fileID: 1598926462}
+  - component: {fileID: 1598926464}
   m_Layer: 5
   m_Name: help
   m_TagString: Untagged
@@ -6061,6 +6062,76 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598926460}
   m_CullTransparentMesh: 1
+--- !u!114 &1598926464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598926460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textUIComponent: {fileID: 0}
+  textMeshComponent: {fileID: 1598926462}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: 
+  ru: "W/S - \u0434\u0432\u0438\u0433\u0430\u0442\u044C\u0441\u044F \u0432\u043F\u0435\u0440\u0451\u0434/\u043D\u0430\u0437\u0430\u0434\nA/D
+    - \u0434\u0432\u0438\u0433\u0430\u0442\u044C\u0441\u044F \u0432\u043B\u0435\u0432\u043E/\u0432\u043F\u0440\u0430\u0432\u043E\nF
+    - \u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u043D\u043E\u0436\nSPACE
+    - \u043F\u0440\u044B\u0436\u043E\u043A\nP - \u043E\u0442\u043A\u0440\u044B\u0442\u044C
+    \u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438 \u0438\u043B\u0438 \u0432\u044B\u0439\u0442\u0438
+    \u0432 \u043C\u0435\u043D\u044E\n-------------------------------------------------------------------\nTAB
+    - \u0441\u043A\u0440\u044B\u0442\u044C/\u043F\u043E\u043A\u0430\u0437\u0430\u0442\u044C
+    \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0443 \u043F\u043E \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044E"
+  en: 'W/S - move forward/backward
+
+    A/D - move left/right
+
+    F - inspect the
+    knife
+
+    SPACE - jump
+
+    P - open settings or exit the menu
+
+    -------------------------------------------------------------------
+
+    TAB
+    - hide/show the management hint'
+  tr: 
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 2/2 completed
+  componentTextField: 1
+  countLang: 2
 --- !u!1 &1604496904
 GameObject:
   m_ObjectHideFlags: 0

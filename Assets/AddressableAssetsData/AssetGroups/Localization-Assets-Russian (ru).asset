@@ -16,13 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: cb9db7883dbe14244a2e0e46a25427a5
-  m_SerializeEntries:
-  - m_GUID: 2c1f40a90517d4f4ba86dceab5720d18
-    m_Address: PLAKAT(RU)
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ru
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: e103abac041d13441b1f2c2f7b35a5ae, type: 2}
   m_SchemaSet:

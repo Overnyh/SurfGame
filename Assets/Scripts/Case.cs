@@ -25,6 +25,7 @@ public class Case : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip onOpen;
     [SerializeField] private AudioClip onWin;
+    [SerializeField] private AudioClip onWinGold;
     [SerializeField] private GameObject GoldText;
     [SerializeField] private GameObject BaseText;
     
@@ -117,7 +118,7 @@ public class Case : MonoBehaviour
         GoldText.SetActive(knifeItem.Rare);
         BaseText.SetActive(!knifeItem.Rare);
         rareImage.sprite = rareImageList[knifeItem.Rare ? 1 : 0];
-        audioSource.PlayOneShot(onWin);
+        audioSource.PlayOneShot(knifeItem.Rare ? onWinGold : onWin);
         winPanel.SetActive(true);
         _winItem = Instantiate(imgObject, winPanel.transform);
         Destroy(imgObject);

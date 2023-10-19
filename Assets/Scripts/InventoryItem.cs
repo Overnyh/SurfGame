@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 using YG;
 
@@ -16,8 +17,12 @@ public class InventoryItem : MonoBehaviour, IPointerDownHandler
 
     public static GameObject InventoryPanel;
     public static Inventory Inventory;
+
+    private Button _button;
+
     public void SetKnife()
     {
+        GetComponent<Button>().interactable = YandexGame.savesData.OpenKnifes[knifeItem.KnifeId];
         img.sprite = knifeItem.InventoryImage;
         var tempColor = img.color;
         tempColor.a = YandexGame.savesData.OpenKnifes[knifeItem.KnifeId] ? 1 : 0.5f;
@@ -34,15 +39,11 @@ public class InventoryItem : MonoBehaviour, IPointerDownHandler
     {
         if (YandexGame.savesData.OpenKnifes[knifeItem.KnifeId])
         {
-            print("Take");
             YandexGame.savesData.TackenKnifeId = knifeItem.KnifeId;
             YandexGame.SaveProgress();
             Inventory.GetLoad();
+            GetComponent<Animator>().Play("Normal");
             InventoryPanel.SetActive(false);
-        }
-        else
-        {
-            print("Nope");
         }
     }
 }

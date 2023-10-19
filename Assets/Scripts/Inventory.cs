@@ -23,6 +23,7 @@ public class Inventory : MonoBehaviour
         {
             GetLoad();
         }
+        YandexGame.FullscreenShow();
     }
 
     public void UpdateInventory()

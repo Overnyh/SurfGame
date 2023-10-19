@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Burst.CompilerServices;
 using UnityEditor.Rendering;
 using UnityEngine;
+using YG;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -29,9 +31,23 @@ public class PlayerMovement : MonoBehaviour
     public bool isDead = false;
     public bool AutoHop = true;
 
+    private float _totalMovement = 0;
+
     private void Start()
     {
         //Application.targetFrameRate = 120;
+        StartCoroutine(DataSave());
+    }
+
+    IEnumerator DataSave()
+    {
+        while (true)
+        {
+            YandexGame.savesData.movement = (int)Math.Max(YandexGame.savesData.movement, _totalMovement);
+            YandexGame.SaveProgress();
+            YandexGame.NewLeaderboardScores("lb1", YandexGame.savesData.movement);
+            yield return new WaitForSeconds(4);
+        }
     }
 
     void FixedUpdate()
@@ -41,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
             speed = Speed;
             transform.position = new Vector3(0, 0, 0);
             isDead = false;
-            print("DEAD");
+            _totalMovement = 0;
         }
         else 
         {
@@ -57,7 +73,10 @@ public class PlayerMovement : MonoBehaviour
 
             isGraunded = Physics.CheckSphere(graundCheck.position, graundDistance, graundMask);
             isSurf = Physics.CheckSphere(graundCheck.position, graundDistance, surfMask);
-
+            if (isSurf)
+            {
+                _totalMovement += move.sqrMagnitude * speed * Time.deltaTime;
+            }
 
             if ((isGraunded || isSurf) && velocity.y < 0)
             {
@@ -76,7 +95,6 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.Space) && (isGraunded || isSurf))
             {
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-                print("Jamp");
             }
 
             if (!isGraunded && !isSurf)
