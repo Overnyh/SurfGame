@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 using YG;
 
 public class Settings : MonoBehaviour
@@ -19,8 +20,8 @@ public class Settings : MonoBehaviour
     [SerializeField] GameObject TouchPanel = null;
 
     [SerializeField] private GameObject settingsPanel;
-    [SerializeField] private Slider slider;
-    [SerializeField] private Toggle toggle;
+    [SerializeField] private UnityEngine.UI.Slider slider;
+    [SerializeField] private UnityEngine.UI.Toggle toggle;
 
 
     public int Sensitivity = 100;
@@ -38,6 +39,12 @@ public class Settings : MonoBehaviour
 
     void Start()
     {
+
+        QualitySettings.vSyncCount = 0;  // Отключаем вертикальную синхронизацию
+        //print(QualitySettings.vSyncCount);
+        Application.targetFrameRate = 60;  // Устанавливаем целевой FPS
+        Time.fixedDeltaTime = 1f / 60;  // Устанавливаем фиксированный интервал времени
+
         if (Mobile) 
         {
             JS.SetActive(true);
@@ -46,6 +53,15 @@ public class Settings : MonoBehaviour
             buttonF.SetActive(true);
             TouchPanel.SetActive(true);
 
+            settingsPanel.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+            slider.transform.localScale = new Vector3(1, 1.6f, 1);
+            slider.transform.GetChild(0).transform.localScale = new Vector3(1.35f, 1, 1);
+            slider.transform.GetChild(2).GetChild(0).transform.localScale = new Vector3(1.65f, 1, 1);
+
+            toggle.transform.localScale = new Vector3(1.5f, 1.5f, 1);
+            toggle.transform.GetChild(1).transform.localScale = new Vector3(0.9f, 1, 1);
+
+            settingsPanel.transform.GetChild(4).transform.localScale = new Vector3(1.85f, 1.85f, 1);
 
             characterCamera.GetComponent<PC_MouseLook>().enabled = false;
             TouchPanel.GetComponent<TouchCameraMove>().sensitivity = Sensitivity;
@@ -94,12 +110,12 @@ public class Settings : MonoBehaviour
         }
     }
 
-    public void SensitivityUpdate(Slider slider)
+    public void SensitivityUpdate(UnityEngine.UI.Slider slider)
     {
         Sensitivity = (int)slider.value;
     }
     
-    public void AutoHopUpdate(Toggle toggle)
+    public void AutoHopUpdate(UnityEngine.UI.Toggle toggle)
     {
         AoutoHop = toggle.isOn;
     }
@@ -141,16 +157,16 @@ public class Settings : MonoBehaviour
             if (!visible)
             {
                 settingsPanel.SetActive(false);
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+                UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+                UnityEngine.Cursor.visible = false;
                 SaveSettings();
                 characterCamera.GetComponent<PC_MouseLook>().enabled = true;
             }
             else
             {
                 settingsPanel.SetActive(true);
-                Cursor.lockState = CursorLockMode.Confined;
-                Cursor.visible = true;
+                UnityEngine.Cursor.lockState = CursorLockMode.Confined;
+                UnityEngine.Cursor.visible = true;
                 characterCamera.GetComponent<PC_MouseLook>().enabled = false;
             }
         }

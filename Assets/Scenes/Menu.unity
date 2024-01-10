@@ -8800,12 +8800,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183010907}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d76de3bf9b780ad4fab6a1e32da18bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minResolutionScale: 0.3
+  minResolutionScale: 0.75
   maxResolutionScale: 1
 --- !u!82 &1183010916
 AudioSource:
