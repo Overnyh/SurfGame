@@ -752,6 +752,23 @@
         myGameInstance.SendMessage('YandexGame', 'LeaderboardEntries', JSON.stringify(jsonLB));
     }
 
+    function ConsumePurchases() {
+        try {
+            if (payments != null) {
+                payments.getPurchases().then(purchases => {
+                    console.log('Unprocessed purchases: ', purchases.length);
+                    for (i = 0; i < purchases.length; i++) {
+                        payments.consumePurchase(purchases[i].purchaseToken);
+                        myGameInstance.SendMessage('YandexGame', 'OnPurchaseSuccess', purchases[i].productID);
+                    }
+                });
+            }
+            else console.log('Consume purchases: payments null');
+        } catch (e) {
+            console.error('CRASH Consume purchases: ', e.message);
+        }
+    }
+    
     function LanguageRequest() {
         try {
             myGameInstance.SendMessage('YandexGame', 'SetLanguage', ysdk.environment.i18n.lang);

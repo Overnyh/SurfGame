@@ -680,7 +680,17 @@ namespace YG
 #endif
         }
         #endregion Leaderboard
+        
+        [DllImport("__Internal")]
+        private static extern void ConsumePurchasesInternal();
 
+        public static void ConsumePurchases()
+        {
+#if !UNITY_EDITOR
+            ConsumePurchasesInternal();
+#endif
+        }
+        
         #region Payments
         [DllImport("__Internal")]
         private static extern void BuyPaymentsInternal(string id);

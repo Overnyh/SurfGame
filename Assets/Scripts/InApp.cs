@@ -12,6 +12,11 @@ public class InApp : MonoBehaviour
     {
         YandexGame.PurchaseSuccessEvent += SuccessPurchased;
         YandexGame.PurchaseFailedEvent += FailedPurchased;
+        YandexGame.GetDataEvent += YandexGame.ConsumePurchases;
+        if (YandexGame.SDKEnabled)
+        {
+            YandexGame.ConsumePurchases();
+        }
     }
 
     private void OnDisable()

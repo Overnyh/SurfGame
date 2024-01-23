@@ -50,6 +50,11 @@ mergeInto(LibraryManager.library,
 		LanguageRequest();
 	},
 	
+	ConsumePurchasesInternal: function()
+    {
+    	ConsumePurchases();
+    },
+	
 	RequestingEnvironmentData: function()
 	{
 		RequestingEnvironmentData();
