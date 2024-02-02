@@ -40,7 +40,7 @@ public class Settings : MonoBehaviour
     void Start()
     {
 
-        QualitySettings.vSyncCount = 0;  // Отключаем вертикальную синхронизацию
+        //QualitySettings.vSyncCount = 0;  // Отключаем вертикальную синхронизацию
         //print(QualitySettings.vSyncCount);
         Application.targetFrameRate = 60;  // Устанавливаем целевой FPS
         Time.fixedDeltaTime = 1f / 60;  // Устанавливаем фиксированный интервал времени

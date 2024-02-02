@@ -43,9 +43,11 @@ public class PlayerMovement : MonoBehaviour
     {
         while (true)
         {
+            #if !UNITY_EDITOR
             YandexGame.savesData.movement = (int)Math.Max(YandexGame.savesData.movement, _totalMovement);
             YandexGame.SaveProgress();
             YandexGame.NewLeaderboardScores("lb1", YandexGame.savesData.movement);
+            #endif
             yield return new WaitForSeconds(4);
         }
     }
