@@ -16,6 +16,13 @@ public class ShopItem : MonoBehaviour
     {
         YandexGame.GetDataEvent += UpdateVisability;
         InApp.OnPurchaseComplete += UpdateVisability;
+
+        _button = GetComponent<Button>();
+        _sprite = GetComponent<Image>();
+        if (YandexGame.SDKEnabled)
+        {
+            UpdateVisability();
+        }
     }
 
     private void OnDisable()
@@ -27,12 +34,7 @@ public class ShopItem : MonoBehaviour
 
     private void Start()
     {
-        _button = GetComponent<Button>();
-        _sprite = GetComponent<Image>();
-        if (YandexGame.SDKEnabled)
-        {
-            UpdateVisability();
-        }
+
     }
 
     private void UpdateVisability()
