@@ -85,10 +85,10 @@ MonoBehaviour:
     m_Value: {x: 0.96389407, y: 1, z: 0.99618477, w: 0}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 0.9899009, y: 1, z: 0.9921651, w: -0.04639238}
+    m_Value: {x: 0.98625344, y: 1, z: 0.9485803, w: -0.04639238}
   gain:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.9993441, z: 0.98933405, w: 0.0026189748}
+    m_Value: {x: 1, y: 0.9641951, z: 0.9117486, w: 0.0026189748}
 --- !u!114 &1453659336501908171
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -150,10 +150,10 @@ MonoBehaviour:
     m_Value: 28.58
   aperture:
     m_OverrideState: 1
-    m_Value: 1.5
+    m_Value: 1
   focalLength:
     m_OverrideState: 1
-    m_Value: 124
+    m_Value: 88
   bladeCount:
     m_OverrideState: 0
     m_Value: 5
@@ -191,11 +191,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eb4b772797da9440885e8bd939e9560, type: 3}
   m_Name: ColorCurves
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   master:
     m_OverrideState: 1
     m_Value:
-      <length>k__BackingField: 4
+      <length>k__BackingField: 2
       m_Loop: 0
       m_ZeroValue: 0
       m_Range: 1
@@ -205,35 +205,17 @@ MonoBehaviour:
         - serializedVersion: 3
           time: 0
           value: 0
-          inSlope: 0.36922473
-          outSlope: 0.36922473
+          inSlope: 0
+          outSlope: 0.57063305
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.30451128
-          value: 0.17073172
-          inSlope: 0.8361373
-          outSlope: 0.8361373
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 0.6616541
-          value: 0.57723576
-          inSlope: 1.1190022
-          outSlope: 1.1190022
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 0.9430894
-          inSlope: 0.99362767
-          outSlope: 0.99362767
+          time: 0.9974619
+          value: 0.71657753
+          inSlope: 0.32694077
+          outSlope: 0.32694077
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
