@@ -16,6 +16,9 @@ namespace YG
         public int Sensitivity = 100;
         public bool AutoHope = true;
         public int movement = 0;
+        public int KnifesCount = 9;
+        public bool freeKnife = false;
+        public int freeKnifeTime = 900;
         public SavesYG()
         {
             OpenKnifes[0] = true;

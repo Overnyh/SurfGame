@@ -40,10 +40,10 @@ public class Settings : MonoBehaviour
     void Start()
     {
 
-        //QualitySettings.vSyncCount = 0;  // Отключаем вертикальную синхронизацию
+        //QualitySettings.vSyncCount = 0;  // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         //print(QualitySettings.vSyncCount);
-        Application.targetFrameRate = 60;  // Устанавливаем целевой FPS
-        Time.fixedDeltaTime = 1f / 60;  // Устанавливаем фиксированный интервал времени
+        Application.targetFrameRate = 60;  // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ FPS
+        Time.fixedDeltaTime = 1f / 60;  // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
         if (Mobile) 
         {
@@ -99,7 +99,7 @@ public class Settings : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
         {
             SettingsPanelVisibility(!settingsPanel.activeSelf);
         }

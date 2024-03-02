@@ -14,6 +14,13 @@ public class MenuScript: MonoBehaviour
             YandexGame.savesData.OpenKnifes[0] = true;
             YandexGame.SaveProgress();
         }
+        if (Input.GetKeyDown(KeyCode.F) && Input.GetKeyDown(KeyCode.Delete))
+        {
+            print("free free");
+            YandexGame.savesData.freeKnife = false;
+            YandexGame.savesData.freeKnifeTime = 60;
+            YandexGame.SaveProgress();
+        }
     }
 
     public void LoadLevel(int lvlId)

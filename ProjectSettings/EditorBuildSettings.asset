@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SkillTest.unity
     guid: a926f7c74f4f62e47a9c2e99dc95fc88
+  - enabled: 1
+    path: Assets/Scenes/LEGO.unity
+    guid: 4b7f9f30bf4250f43925c5309720dbb2
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 19f94ada06fc6cc4f9eaea53087f7c23,
       type: 2}

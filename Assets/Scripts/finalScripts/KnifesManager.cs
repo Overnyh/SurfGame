@@ -20,7 +20,7 @@ public class KnifesManager : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKey(KeyCode.F)) DoF();
+        if (Input.GetKey(KeyCode.F) || Input.GetKey(KeyCode.E)) DoF();
     }
 
     public void DoF()
