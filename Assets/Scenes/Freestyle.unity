@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 1.5
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 12bd5be9998885f4cae2cbd23bc32265, type: 2}
@@ -7267,7 +7267,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: e57eb9b72b6ae1640b1aa4285f01b489, type: 2}
+  sharedProfile: {fileID: 11400000, guid: b98fdd83b114b2d4ba3d1b49a688c98f, type: 2}
 --- !u!1001 &1911643219
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -3457,7 +3457,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.9858491, b: 0.9858491, a: 1}
-  m_Intensity: 1.22
+  m_Intensity: 2.58
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -5214,7 +5214,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.85
+  m_Intensity: 2.07
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -7580,7 +7580,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: e57eb9b72b6ae1640b1aa4285f01b489, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 653583760cb1f8449a313cea18b0bd66, type: 2}
 --- !u!1 &1413031119
 GameObject:
   m_ObjectHideFlags: 0
@@ -8777,6 +8777,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 102a8c32a5ed54041a494f90d223905f, type: 2}
+    - target: {fileID: 2230012363755841453, guid: 80406d91821c34942898d83fc6aedded,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: d760b0b9967286746be6e7c6843954fc, type: 2}
     - target: {fileID: 3657526939750100246, guid: 80406d91821c34942898d83fc6aedded,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -8810,7 +8815,7 @@ PrefabInstance:
     - target: {fileID: 7097982242667855937, guid: 80406d91821c34942898d83fc6aedded,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7540189091614697841, guid: 80406d91821c34942898d83fc6aedded,
         type: 3}
